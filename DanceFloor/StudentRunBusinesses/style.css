@@ -15,9 +15,8 @@
   right: 0;
   top: 0;
   height: 7vh;
-  background-color: #342f2e;
+  background-color: #b06d70;
   padding: 1vh 0;
-  box-shadow: 1px 2px 1px;
 }
 .nbn-logo-nav {
   margin-left: 1vw;
@@ -42,11 +41,13 @@
   font-family: var(--hed-font-default);
   font-size: 4em;
   margin-bottom: 0;
+  color: #b06d70;
+  text-shadow: 3px 3px #fce3c5;
 }
 .article-dek {
   font-family: var(--hed-font-default);
   margin-top: 0;
-  font-size: 2em;
+  font-size: 1.6em;
   margin-bottom: 0;
   font-weight: 500;
 }
@@ -62,6 +63,32 @@
 }
 .byline-link:hover {
   color: #4e2a84;
+}
+
+/* misc */
+em {
+  font-weight: 600;
+  font-size: 1.5em;
+  font-style: normal;
+  color: #b06d70;
+}
+
+.image {
+  width: 20%;
+  padding: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.left {
+  left: 5%;
+}
+.right {
+  right: 5%;
+}
+
+img {
+  width: 100%;
 }
 
 /* ARTICLE BODY - customize however you want! */
@@ -105,6 +132,11 @@
 .credits-link a:hover {
   color: #4e2a84;
 }
+.article-body h3 {
+  color: #b06d70;
+  font-family: var(--hed-font-default);
+  font-size: 1.5em;
+}
 
 /* MOBILE STYLING - add any mobile specific CSS here but please leave navbar styling as is!*/
 
@@ -123,5 +155,8 @@
   }
   .article-body {
     width: 90vw;
+  }
+  img {
+    display: none;
   }
 }

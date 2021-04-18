@@ -3,13 +3,193 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oxygen:ital,wght@0,600;0,700;1,600;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Faustina:ital,wght@0,600;0,700;1,600;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
-    <title>Article Title Here</title>
+    <style>
+      /* DEFAULT FONTS - feel free to add any other variables you need here */
+
+      :root {
+        /* Default font for headlines, headings, bylines, etc. */
+        --hed-font-default: "Barlow", sans-serif;
+        /* Font used for headlines if print design uses serif font */
+        --hed-font-serif: "Faustina", serif;
+        /* Default font for body text */
+        --body-font: "PT Serif", serif;
+      }
+
+      .mag-navbar {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 7vh;
+        background-color: #342f2e;
+        padding: 1vh 0;
+        box-shadow: 1px 2px 1px;
+      }
+      .nbn-logo-nav {
+        margin-left: 1vw;
+        height: 100%;
+      }
+      .nbn-path {
+        fill: white;
+        transition: fill 1s ease;
+      }
+      .homepage-link:hover .nbn-path {
+        fill: #b6acd1;
+      }
+
+      /* HED, DEK, BYLINE - feel free to play with this! */
+
+      .article-top-content {
+        margin-top: 15vh;
+        text-align: center;
+      }
+      .article-hed {
+        /* replace "default" with "serif" if article uses a serif font in the hed */
+        font-family: var(--hed-font-default);
+        font-size: 4em;
+        font-weight: 800;
+        margin-bottom: 0;
+        color: white;
+        margin-top: 0.3em;
+      }
+      .article-dek {
+        font-family: var(--hed-font-default);
+        margin-top: 0;
+        font-size: 2em;
+        margin-bottom: 0;
+        font-weight: 500;
+        color: white;
+      }
+      .article-byline {
+        font-family: var(--hed-font-default);
+        font-weight: 400;
+        margin-top: 0.5em;
+        font-size: 1.5em;
+        color: white;
+      }
+      .byline-link {
+        color: white;
+        transition: color 1s ease;
+      }
+      .byline-link:hover {
+        color: #4e2a84;
+      }
+      body {
+        background-color: #222323;
+      }
+      header mark {
+        color: #ffef13;
+        background-color: transparent;
+        font-style: italic;
+      }
+      article mark {
+        color: black;
+        background-color: transparent;
+        font-weight: 600;
+      }
+      header img {
+        width: 60vw;
+        margin-bottom: 0;
+      }
+      #beam {
+        background: rgb(255, 254, 233);
+        background: linear-gradient(
+          90deg,
+          rgba(255, 254, 233, 1) 0%,
+          rgba(202, 199, 90, 1) 68%
+        );
+      }
+      /* ARTICLE BODY - customize however you want! */
+
+      .article-body {
+        font-family: var(--body-font);
+        width: 40vw;
+        margin: auto;
+        font-size: 1.2em;
+      }
+      .article-body p {
+        margin-bottom: 2em;
+        color: white;
+      }
+      .blink_me {
+        animation: blinker 4.5s linear infinite;
+      }
+
+      @keyframes blinker {
+        50% {
+          opacity: 0;
+        }
+      }
+      .pull-quote {
+        background-color: #e9e580;
+        border-radius: 8px;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-top: 0.1em;
+        padding-bottom: 0.1em;
+        margin: 1em;
+        font-family: "Barlow", sans-serif;
+        font-size: 0.8em;
+        text-align: center;
+      }
+
+      /* CREDITS - shouldn't need to change anything! */
+
+      .article-credits {
+        text-align: center;
+        font-family: var(--hed-font-default);
+        color: white;
+      }
+      .credits-heading {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+      }
+      .credits-subhed {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+      .credits-item {
+        margin-top: 0.5em;
+        margin-bottom: 1em;
+        font-weight: 400;
+      }
+      .credits-link {
+        margin-top: 1.5em;
+      }
+      .credits-link a {
+        color: white;
+        transition: color 1s ease;
+      }
+      .credits-link a:hover {
+        color: #4e2a84;
+      }
+
+      /* MOBILE STYLING - add any mobile specific CSS here but please leave navbar styling as is!*/
+
+      @media screen and (max-width: 700px) {
+        .mag-navbar {
+          height: 5vh;
+        }
+        .article-hed {
+          font-size: 3em;
+        }
+        .article-dek {
+          font-size: 1.5em;
+        }
+        .article-byline {
+          font-size: 1em;
+        }
+        .article-body {
+          width: 90vw;
+        }
+      }
+    </style>
+    <title>Behind the Board</title>
   </head>
   <body>
     <!-- Please don't touch anything in this nav tag! -->
@@ -39,53 +219,245 @@
       </a>
     </nav>
     <header class="article-top-content">
-      <h1 class="article-hed">Article Hed</h1>
-      <h2 class="article-dek">This is the article dek</h2>
+      <img
+        class="blink_me"
+        style="
+          position: absolute;
+          z-index: -1;
+          width: 65vw;
+          margin-left: 0;
+          transform: translate(5%, -48%);
+        "
+        src="img/triangle.svg"
+      />
+      <img src="img/TRUSTEES2.png" />
+      <h1 class="article-hed">Behind the <mark>Board</mark></h1>
+      <h2 class="article-dek">
+        Northwestern's Board of Trustees is as influential as it is nebulous.
+      </h2>
       <h3 class="article-byline">
         WRITTEN BY
-        <a class="byline-link" href="#"><strong>AUTHOR NAME</strong></a>
+        <a class="byline-link" href="#"><strong>MADALEINE RUBIN</strong></a>
       </h3>
     </header>
     <article class="article-body">
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-        minima eius alias modi fugiat quibusdam tenetur reprehenderit ipsam
-        dolor ab esse quas rem facilis praesentium, nesciunt illum nam sunt
-        animi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-        quos officiis vero iure voluptatem obcaecati, a incidunt adipisci
-        pariatur atque dolorum tempore aspernatur, fugiat corrupti accusamus
-        quam nostrum harum sed.
+        Northwestern’s Board of Trustees has been described with a slew of
+        labels over the last decade: “Elusive” in a 2016 North by Northwestern
+        piece; “inaccessible” in quotes from a 2015 The Daily Northwestern
+        article; “morally bankrupt” in a 2018 The Daily Northwestern letter to
+        the editor. The trustees’ controversial reputation is complex— though
+        the Board makes decisions that impact students daily, it remains an
+        ostensibly mysterious entity.
       </p>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-        minima eius alias modi fugiat quibusdam tenetur reprehenderit ipsam
-        dolor ab esse quas rem facilis praesentium, nesciunt illum nam sunt
-        animi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-        quos officiis vero iure voluptatem obcaecati, a incidunt adipisci
-        pariatur atque dolorum tempore aspernatur, fugiat corrupti accusamus
-        quam nostrum harum sed.
+        The Board’s 67 appointed trustees, organized into 13 subcommittees, each
+        serve four-year terms. Its 85 “life trustees” are considered
+        distinguished members of the Northwestern community and serve
+        never-ending terms. As the legal “owner” of the University and its
+        assets, the Board is responsible for Northwestern’s endowment, budget
+        and policy approval. Among students and faculty, though, trustees are
+        known for their contentious decisions.
       </p>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-        minima eius alias modi fugiat quibusdam tenetur reprehenderit ipsam
-        dolor ab esse quas rem facilis praesentium, nesciunt illum nam sunt
-        animi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-        quos officiis vero iure voluptatem obcaecati, a incidunt adipisci
-        pariatur atque dolorum tempore aspernatur, fugiat corrupti accusamus
-        quam nostrum harum sed.
+        Most recently, the Board rejected Fossil Free NU (FFNU)’s proposal to
+        cut ties with any top 100 coal, oil or gas companies and reinvest in
+        renewable energy. The five-year divestment saga began with an Associated
+        Student Government proposal to divest from coal companies and is
+        emblematic of the Board’s relationship with students. FFNU was able to
+        secure an April 2020 meeting with trustees only after their proposal was
+        rejected and they blocked Sheridan Road in protest, according to Bienen
+        second-year and FFNU executive board member Lucy London.
+      </p>
+      <p>
+        “It’s definitely not an easy process,” London says. “They’re big
+        figures, and there’s no contact information.”
+      </p>
+      <p>
+        London and other FFNU members contacted the Board through the Advisory
+        Committee on Investment Responsibility (ACIR). Established in 2016, ACIR
+        advises the Board’s Investment Committee on ethically managing holdings,
+        alongside Northwestern’s Chief Investment Officer. When former CIO
+        William McClean resigned last year, ACIR organized a meeting between
+        Fossil Free members and trustees where students lobbied for inclusion on
+        the CIO search committee. The Board declined their input.
+      </p>
+      <p>
+        “Their hesitation about it was that there isn’t precedence for it, but
+        there is precedence at other schools, and I think we should have that
+        here,” London says.
+      </p>
+      <p>
+        Northwestern’s Office of Administration and Planning, which includes the
+        Board of Trustees, was not available for a comment prior to publication.
+      </p>
+      <p>
+        In a 2010 report, the Association of Governing Boards — a membership
+        organization for higher education boards — found that 20.1% of private
+        universities and over 70% of public universities had some form of
+        student representation on their boards. Many of Northwestern’s peer
+        institutions, such as Duke University and Vanderbilt University, allow
+        student representatives. Because Northwestern’s Board does not, trustees
+        only directly interact with students during an annually scheduled event
+        when the Student Affairs committee speaks with an undergraduate panel.
+      </p>
+      <p>
+        “It would be helpful if there were more public meetings. I think the
+        Board agrees with this,” Weinberg professor and ACIR chair David Uttal
+        says. “I certainly will do my very best to get in these issues about...
+        the general lack of communication with all of the constituencies and the
+        lack even of knowing who the [trustees] are.”
+      </p>
+      <p>
+        In their second meeting with the CIO search committee, FFNU collaborated
+        with another student group communicating with the Board: Northwestern
+        Community Not Cops (NUCNC). After sending their petition to abolish the
+        Northwestern University Police Department to Northwestern business and
+        finance administrators on June 3, 2020, NUCNC members hoped it would be
+        passed on to trustees and discussed at the meeting.
+      </p>
+      <p>
+        “One member said the majority of the Black members on the Board of
+        Trusteeshad read it... but everyone else on the panel had not,” says
+        Weinberg third-year Karina Karbo-Wright, who represented NUCNC in the
+        joint meeting. “I doubt the petition is going to get to their desks
+        because it came out right as George Floyd was murdered... and even then,
+        the Board couldn’t be bothered besides the few that did read it.”
+      </p>
+      <p>
+        A biennial undergraduate survey updates trustees on campus happenings,
+        and according to Uttal, they receive frequent reports from President
+        Morton Schapiro throughout the year. With pandemic-related information
+        developing daily, though, recent reports may have overlooked key details
+        regarding student activism.
+      </p>
+      <p>
+        “There certainly is an attempt to keep the Board of Trustees informed,
+        but I don’t think there’s sufficient student input to that. I actually
+        get to read some of [the reports], and during the pandemic there were
+        pages and pages about how to respond,” Uttal says. “There wasn’t much
+        about, for example, the protests about the police.”
+      </p>
+      <p>
+        Despite recent disagreements, the Board has sided with students in the
+        past. In 2018, students and faculty demanded the University evaluate
+        harassment allegations against former Medill Justice Project director
+        Alec Klein; the University acquiesced, and trustees supported the
+        investigation. When Klein resigned after accusations of predatory
+        behavior from over 19 women, Northwestern closed the investigation with
+        no appeal process.
+      </p>
+      <p>
+        Klein’s case could set an important precedent — the Board has yet to
+        address a 2021 lawsuit filed against the University for allegedly
+        concealing claims of sexual harassment within Northwestern’s
+        cheerleading team. Northwestern’s Faculty Senate, the elected faculty
+        representative body, passed legislation this March calling on the
+        University to include their input when investigating the claims. The
+        Senate expressed concern over the investigative roles of University
+        administration and the Board of Trustees, especially given allegations
+        that cheerleaders were forced to interact with influential donors to
+        better the University’s finances.
+      </p>
+      <p>
+        “Northwestern has been in the news so much these past couple of months,”
+        Karbo-Wright says. “I don’t want to trivialize the things that are
+        happening, but I think it’s building up a sort of momentum... If we can
+        find something that’s going to cause the right amount of national
+        outrage, we could force the Board’s hand.”
+      </p>
+      <p>
+        The Board’s most anticipated upcoming decision — the selection of a new
+        president to replace outgoing President Schapiro — is as critical as it
+        will be contentious.
+      </p>
+      <p>
+        “It’s so difficult because no matter what, they should not be the ones
+        picking the President,” Karbo-Wright says. “At the end of the day, it
+        should be the entire school—staff, faculty, students, and
+        administrators, and the Board; it should be a group effort.”
+      </p>
+      <div class="pull-quote">
+        <h2 style="font-weight: 400">
+          "There certainly is an attempt to keep the Board of Trustees informed,
+          but
+          <mark>I don’t think there’s sufficient student input to that."</mark>
+        </h2>
+        <h2>
+          -David Uttal <br />
+          <div style="font-weight: 400">ACIR Chair and Weinberg Professor</div>
+        </h2>
+      </div>
+      <p>
+        The Board is ubiquitous in campus conversations because of its
+        high-profile decisions. Its primary focus, though, is managing the
+        school’s budget and endowment. According to Uttal, Northwestern’s
+        finances have undergone two “dramatic negative swings in the last four
+        years.” The first in 2018 forced Northwestern to draw $100 million from
+        the endowment to settle a $94 million budget deficit. The COVID-19
+        pandemic also continues to alter the University’s financial standing.
+      </p>
+      <p>
+        “They weathered it pretty well,” Uttal says. “There have been some
+        layoffs but not nearly as many as other universities… departments have
+        not been eliminated, and Northwestern is not in under threat of closing.
+        I’m not excusing them, but it is probably a little harder to get
+        attention when those things are going on, when there’s a potentially
+        existential threat. They had to be focused on that.”
+      </p>
+      <p>
+        While the Board monitors University spending, the Northwestern community
+        monitors trustees’ spending. J. Landis Martin, current chairman and
+        managing director of the Board, donated $30,000 over two years to Trump
+        Victory, a political action committee that supported former President
+        Donald Trump’s 2016 campaign. Martin’s history of supporting Republican
+        campaigns was questioned by alumni in a The Daily Northwestern letter to
+        the editor. His spending starkly contrasts with Northwestern’s political
+        demographics—it was recently ranked the fifth most liberal university in
+        the country by Niche, a data analytics website.
+      </p>
+      <p>
+        “I feel like they’re really conservative compared to other colleges and
+        universities,” London says. “It might be half and half... but it’s the
+        people who have the power in the board who are the most conservative.”
+      </p>
+      <p>
+        Trustees are elected every four years by the Board’s Committee on
+        Governance and Nominations, and their terms are staggered. When new
+        trustees are appointed and elected, students and faculty are informed,
+        but do not have any input.
+      </p>
+      <p>
+        “[At some universities], the Board of Trustees or the equivalent is
+        actually elected and more responsible to the public,” Uttal says. “But
+        ours is totally appointed. So, we have very little say in who becomes a
+        Board of Trustees member, and that is arguably a problem.”
+      </p>
+      <p>
+        NUCNC’s police abolition movement is likely the next student activism
+        issue the Board will consider. Organizers specifically addressed
+        trustees in a pre-written statement during a protest on March 13. Given
+        that trustees took six months to release their decision on Fossil Free
+        NU’s divestment proposal, a long process may be ahead of NUCNC members.
+        While they would need the Board’s support to completely abolish NUPD,
+        change on a smaller scale has been achieved without trustee approval in
+        the past. “Students have made differences; they made differences during
+        the Vietnam War…,” Uttal says. “It can happen. It hasn’t happened very
+        often. I would suggest that the best [solution] is one of partnership
+        with the Board.”
       </p>
     </article>
 
     <footer class="article-credits">
       <h3 class="credits-heading">Credits</h3>
       <h2 class="credits-subhed">Writing</h2>
-      <h3 class="credits-item">Writer Name</h3>
+      <h3 class="credits-item">Madaleine Rubin</h3>
       <h2 class="credits-subhed">Editing</h2>
-      <h3 class="credits-item">Editor Name</h3>
+      <h3 class="credits-item">Nathan Ansell</h3>
       <h2 class="credits-subhed">Print Design</h2>
-      <h3 class="credits-item">Designer Name</h3>
+      <h3 class="credits-item">Alisa Gao</h3>
       <h2 class="credits-subhed">Web Design & Development</h2>
-      <h3 class="credits-item">Your Name!</h3>
+      <h3 class="credits-item">Nathanial Ortiz</h3>
       <h2 class="credits-link">
         <a href="https://northbynorthwestern.com/magazine-current/"
           >Back to Magazine Homepage</a
@@ -93,5 +465,4 @@
       </h2>
     </footer>
   </body>
-  <script src="main.js"></script>
 </html>

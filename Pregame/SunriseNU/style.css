@@ -2,13 +2,15 @@
 
 :root {
   /* Default font for headlines, headings, bylines, etc. */
-  --hed-font-default: "Poppins", sans-serif;
+  --hed-font-default: "Barlow", sans-serif;
   /* Font used for headlines if print design uses serif font */
-  --hed-font-serif: "Oxygen", sans-serif;
+  --hed-font-serif: "Faustina", serif;
   /* Default font for body text */
   --body-font: "PT Serif", serif;
 }
-
+body {
+  margin: 0;
+}
 .mag-navbar {
   position: fixed;
   left: 0;
@@ -42,6 +44,7 @@
   font-family: var(--hed-font-default);
   font-size: 4em;
   margin-bottom: 0;
+  background-color: #ffdf02;
 }
 .article-dek {
   font-family: var(--hed-font-default);
@@ -63,7 +66,9 @@
 .byline-link:hover {
   color: #4e2a84;
 }
-
+#protest:hover {
+  cursor: pointer;
+}
 /* ARTICLE BODY - customize however you want! */
 
 .article-body {

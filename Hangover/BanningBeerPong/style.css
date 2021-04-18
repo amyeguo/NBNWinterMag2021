@@ -2,11 +2,17 @@
 
 :root {
   /* Default font for headlines, headings, bylines, etc. */
-  --hed-font-default: "Poppins", sans-serif;
+  --hed-font-default: "Barlow", sans-serif;
   /* Font used for headlines if print design uses serif font */
-  --hed-font-serif: "Oxygen", sans-serif;
+  --hed-font-serif: "Faustina", serif;
+  /* Font used for print */
+  --hed-font-print: "Roboto", sans-serif;
   /* Default font for body text */
   --body-font: "PT Serif", serif;
+}
+
+body {
+  background-color: #ffedef;
 }
 
 .mag-navbar {
@@ -45,15 +51,16 @@
 }
 .article-dek {
   font-family: var(--hed-font-default);
-  margin-top: 0;
+  margin-top: 2vh;
   font-size: 2em;
-  margin-bottom: 0;
+  margin-bottom: 3vh;
   font-weight: 500;
+  color: #a81f2b;
 }
 .article-byline {
   font-family: var(--hed-font-default);
   font-weight: 400;
-  margin-top: 0.5em;
+  margin-top: 0.3em;
   font-size: 1.5em;
 }
 .byline-link {
@@ -66,14 +73,48 @@
 
 /* ARTICLE BODY - customize however you want! */
 
+.drop-cap {
+  font-family: var(--hed-font-print);
+  font-size: 1.8em;
+  margin: auto;
+  color: #a81f2b;
+}
 .article-body {
   font-family: var(--body-font);
-  width: 40vw;
+  width: 50vw;
   margin: auto;
   font-size: 1.2em;
 }
+
 .article-body p {
   margin-bottom: 2em;
+}
+
+/* IMAGES */
+
+.pong-title {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+.blockquote {
+  text-align: center;
+  float: left;
+  width: 15%;
+  margin-left: 4em;
+  color: #a81f2b;
+  font-family: var(--hed-font-print);
+  font-size: 1em;
+  border-style: solid;
+  background-color: #ffffff;
+  padding: 0.4em;
+}
+.pong-sign {
+  max-width: 8%;
+  height: auto;
+  object-fit: cover;
+  float: right;
+  padding: 10em;
 }
 
 /* CREDITS - shouldn't need to change anything! */
@@ -123,5 +164,11 @@
   }
   .article-body {
     width: 90vw;
+  }
+  .blockquote {
+    display: none;
+  }
+  .pong-sign {
+    display: none;
   }
 }

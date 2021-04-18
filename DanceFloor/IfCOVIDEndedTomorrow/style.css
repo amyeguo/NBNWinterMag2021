@@ -2,9 +2,9 @@
 
 :root {
   /* Default font for headlines, headings, bylines, etc. */
-  --hed-font-default: "Poppins", sans-serif;
+  --hed-font-default: "Barlow", sans-serif;
   /* Font used for headlines if print design uses serif font */
-  --hed-font-serif: "Oxygen", sans-serif;
+  --hed-font-serif: "Faustina", serif;
   /* Default font for body text */
   --body-font: "PT Serif", serif;
 }
@@ -18,6 +18,7 @@
   background-color: #342f2e;
   padding: 1vh 0;
   box-shadow: 1px 2px 1px;
+  z-index: 1;
 }
 .nbn-logo-nav {
   margin-left: 1vw;
@@ -42,6 +43,7 @@
   font-family: var(--hed-font-default);
   font-size: 4em;
   margin-bottom: 0;
+  color: #af6c70;
 }
 .article-dek {
   font-family: var(--hed-font-default);
@@ -49,12 +51,14 @@
   font-size: 2em;
   margin-bottom: 0;
   font-weight: 500;
+  color: #af6c70;
 }
 .article-byline {
   font-family: var(--hed-font-default);
   font-weight: 400;
   margin-top: 0.5em;
   font-size: 1.5em;
+  color: #af6c70;
 }
 .byline-link {
   color: black;
@@ -63,17 +67,85 @@
 .byline-link:hover {
   color: #4e2a84;
 }
+strong {
+  color: #af6c70;
+}
+a {
+  text-decoration-color: #af6c70;
+}
+.center {
+  position: absolute;
+  top: 9vh;
+  width: 90vw;
+  transform: rotate(2deg);
+  animation: mymove 3s infinite;
+}
+.sidebar-image {
+  position: absolute;
+  width: 20vw;
+  text-align: center;
+  font-family: var(--hed-font-default);
+  color: var(--text-gray);
+}
+.sidebar-left {
+  left: -24vw;
+  transform: translate(0, -20vh);
+}
+.sidebar-left1 {
+  left: 0;
+  transform: translate(0, 20vh);
+}
+.sidebar-right {
+  right: 0vw;
+  padding-left: 10em;
+  transform: translate(0, -10vh);
+}
+.sidebar-image img {
+  width: 200%;
+
+  /* animation: sway 4s ease-in-out infinite alternate; */
+}
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 /* ARTICLE BODY - customize however you want! */
 
+body {
+  background-color: #ffd7c5;
+}
+
 .article-body {
   font-family: var(--body-font);
-  width: 40vw;
+  width: 60vw;
   margin: auto;
   font-size: 1.2em;
 }
 .article-body p {
-  margin-bottom: 2em;
+  margin-bottom: 0;
+  margin-top: 0;
+  color: #ffffff;
+}
+@keyframes mymove {
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+.byline {
+  margin-top: -20%;
+  margin-right: 1%;
+  text-align: right;
+  font-size: 0.9em;
+}
+
+.mauve-box {
+  background-color: rgba(175, 106, 110, 0.5);
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
 }
 
 /* CREDITS - shouldn't need to change anything! */
@@ -81,6 +153,7 @@
 .article-credits {
   text-align: center;
   font-family: var(--hed-font-default);
+  color: #af6c70;
 }
 .credits-heading {
   font-size: 2em;
@@ -99,7 +172,7 @@
   margin-top: 1.5em;
 }
 .credits-link a {
-  color: black;
+  color: #af6c70;
   transition: color 1s ease;
 }
 .credits-link a:hover {
@@ -123,5 +196,29 @@
   }
   .article-body {
     width: 90vw;
+  }
+  body img {
+    top: 7.5vh;
+  }
+  .sidebar-left {
+    position: relative;
+    left: -4vw;
+    transform: translate(-20vw, 0);
+  }
+  .sidebar-left1 {
+    position: relative;
+    left: 50%;
+    margin-top: 13%;
+    margin-bottom: 1em;
+    transform: scale(2) translate(-50%, 0);
+  }
+  .sidebar-right {
+    position: relative;
+    right: 0vw;
+    transform: translate(-50vw, 0);
+  }
+
+  img {
+    display: none;
   }
 }

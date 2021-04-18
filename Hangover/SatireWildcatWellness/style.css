@@ -2,9 +2,9 @@
 
 :root {
   /* Default font for headlines, headings, bylines, etc. */
-  --hed-font-default: "Poppins", sans-serif;
+  --hed-font-default: "Barlow", sans-serif;
   /* Font used for headlines if print design uses serif font */
-  --hed-font-serif: "Oxygen", sans-serif;
+  --hed-font-serif: "Faustina", serif;
   /* Default font for body text */
   --body-font: "PT Serif", serif;
 }
@@ -15,9 +15,8 @@
   right: 0;
   top: 0;
   height: 7vh;
-  background-color: #342f2e;
+  background-color: #e67d6c;
   padding: 1vh 0;
-  box-shadow: 1px 2px 1px;
 }
 .nbn-logo-nav {
   margin-left: 1vw;
@@ -41,6 +40,7 @@
   /* replace "default" with "serif" if article uses a serif font in the hed */
   font-family: var(--hed-font-default);
   font-size: 4em;
+  color: #e67d6c;
   margin-bottom: 0;
 }
 .article-dek {
@@ -75,6 +75,44 @@
 .article-body p {
   margin-bottom: 2em;
 }
+/*styles the buttons with class="accordion*/
+.accordion {
+  color: #e67d6c;
+  background-color: transparent;
+  display: block;
+  margin: auto;
+  cursor: pointer; /*on hover, the cursor turns into a pointer*/
+  width: 80%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-family: var(--hed-font-default);
+  font-size: 20px;
+  border-bottom: 5px solid #e67d6c;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  text-align: center;
+  transition: background-color 0.5s;
+}
+
+.accordion:hover {
+  color: white;
+  background-color: #e67d6c;
+}
+
+.panel {
+  padding: 20px;
+  display: block;
+  height: auto;
+  overflow: auto;
+  display: none;
+}
+
+.panel img {
+  float: left;
+  margin-right: 15px;
+  width: 50%;
+}
 
 /* CREDITS - shouldn't need to change anything! */
 
@@ -106,6 +144,122 @@
   color: #4e2a84;
 }
 
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  z-index: -1;
+}
+/* The actual timeline (the vertical ruler) */
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: #97d0c6;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+.tastetest {
+  width: 60%;
+
+  display: block;
+  margin: auto;
+}
+.wildone {
+  width: 60%;
+  display: block;
+  margin: auto;
+  z-index: -6;
+}
+.imgright {
+  width: 100%;
+  display: inline-block;
+  margin: auto;
+}
+.imgright p {
+  width: 50%;
+  float: left;
+}
+.imgright img {
+  float: right;
+  width: 40%;
+}
+.imgleft {
+  width: 100%;
+  display: inline-block;
+  margin: auto;
+}
+.imgleft p {
+  float: right;
+  width: 50%;
+}
+.imgleft img {
+  float: left;
+  width: 40%;
+}
+/* Container around content */
+.container {
+  position: relative;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: "";
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  right: -15px;
+  background-color: #97d0c6;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+.left .content {
+  width: 60%;
+  left: 30%;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -15px;
+}
+
+.right .content {
+  left: 10%;
+  width: 60%;
+}
+
+em {
+  font-size: 2em;
+  font-weight: 800;
+  font-family: var(--hed-font-default);
+  font-style: normal;
+  color: #97d0c6;
+}
+/* The actual content */
+.content {
+  position: relative;
+}
+.content h2 {
+  font-family: var(--hed-font-serif);
+}
+.panel p {
+  font-family: var(--body-font);
+}
 /* MOBILE STYLING - add any mobile specific CSS here but please leave navbar styling as is!*/
 
 @media screen and (max-width: 700px) {
@@ -123,5 +277,25 @@
   }
   .article-body {
     width: 90vw;
+  }
+  .left {
+    left: 0%;
+  }
+  .right .content {
+    width: 100%;
+    right: 0;
+  }
+  .left .content {
+    width: 100%;
+    left: 0;
+    overflow: hidden;
+  }
+  .imgleft img,
+  .imgright img {
+    display: none;
+  }
+  .imgleft p,
+  .imgright p {
+    width: 100%;
   }
 }

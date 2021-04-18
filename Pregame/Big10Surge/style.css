@@ -2,11 +2,14 @@
 
 :root {
   /* Default font for headlines, headings, bylines, etc. */
-  --hed-font-default: "Poppins", sans-serif;
+  --hed-font-default: "Barlow", sans-serif;
   /* Font used for headlines if print design uses serif font */
-  --hed-font-serif: "Oxygen", sans-serif;
+  --hed-font-serif: "Faustina", serif;
   /* Default font for body text */
   --body-font: "PT Serif", serif;
+}
+body {
+  background-color: #211b23;
 }
 
 .mag-navbar {
@@ -36,12 +39,15 @@
 .article-top-content {
   margin-top: 15vh;
   text-align: center;
+  color: #ffffff;
 }
 .article-hed {
   /* replace "default" with "serif" if article uses a serif font in the hed */
   font-family: var(--hed-font-default);
-  font-size: 4em;
+  font-size: 4.5em;
   margin-bottom: 0;
+  -webkit-text-stroke: 2px white;
+  -webkit-text-fill-color: transparent;
 }
 .article-dek {
   font-family: var(--hed-font-default);
@@ -57,11 +63,71 @@
   font-size: 1.5em;
 }
 .byline-link {
-  color: black;
+  color: white;
   transition: color 1s ease;
 }
 .byline-link:hover {
   color: #4e2a84;
+}
+
+/* IMAGES PLACING */
+
+.player-1 {
+  position: absolute;
+  top: 30vh;
+  left: -3vw;
+  z-index: 0;
+  width: 40%;
+  height: auto;
+}
+.player-2 {
+  position: absolute;
+  top: 150vh;
+  right: -50vw;
+  z-index: 0;
+  width: 100%;
+  height: auto;
+}
+.player-3 {
+  position: absolute;
+  top: 20vh;
+  right: -6vw;
+  z-index: 0;
+  width: 40%;
+  height: auto;
+}
+.player-4 {
+  position: absolute;
+  top: 250vh;
+  left: -17vw;
+  z-index: 0;
+  width: 50%;
+  height: auto;
+}
+.arrow-1 {
+  position: absolute;
+  top: 106vh;
+  right: 0vw;
+  z-index: 0;
+  width: 30%;
+  height: auto;
+}
+.arrow-2 {
+  position: absolute;
+  top: 329vh;
+  left: -1vw;
+  z-index: 0;
+  width: 30%;
+  height: auto;
+}
+.arrow-3 {
+  position: absolute;
+  top: -20vh;
+  right: 10vh;
+  z-index: -1;
+  width: 60%;
+  height: auto;
+  opacity: 0.2;
 }
 
 /* ARTICLE BODY - customize however you want! */
@@ -71,16 +137,26 @@
   width: 40vw;
   margin: auto;
   font-size: 1.2em;
+  color: #a8a7a7;
 }
 .article-body p {
   margin-bottom: 2em;
 }
-
+.player-1,
+.player-2,
+.player-3,
+.player-4,
+.arrow-1,
+.arrow-2,
+.arrow-3 {
+  z-index: -1;
+}
 /* CREDITS - shouldn't need to change anything! */
 
 .article-credits {
   text-align: center;
   font-family: var(--hed-font-default);
+  color: #ffffff;
 }
 .credits-heading {
   font-size: 2em;
@@ -99,7 +175,7 @@
   margin-top: 1.5em;
 }
 .credits-link a {
-  color: black;
+  color: white;
   transition: color 1s ease;
 }
 .credits-link a:hover {
@@ -123,5 +199,14 @@
   }
   .article-body {
     width: 90vw;
+  }
+  .player-1,
+  .player-2,
+  .player-3,
+  .player-4,
+  .arrow-1,
+  .arrow-2,
+  .arrow-3 {
+    opacity: 0.3;
   }
 }

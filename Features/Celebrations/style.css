@@ -2,13 +2,21 @@
 
 :root {
   /* Default font for headlines, headings, bylines, etc. */
-  --hed-font-default: "Poppins", sans-serif;
+  --hed-font-default: "Raleway", sans-serif;
   /* Font used for headlines if print design uses serif font */
-  --hed-font-serif: "Oxygen", sans-serif;
+  --hed-font-serif: "Raleway", serif;
+
+  --dek-font: "PT Sans", sans-serif;
   /* Default font for body text */
-  --body-font: "PT Serif", serif;
+  --body-font: "Noto Serif", serif;
+
+  --celeb-blue: #6c97b0;
+  --celeb-red: #c74327;
 }
 
+body {
+  margin: 0;
+}
 .mag-navbar {
   position: fixed;
   left: 0;
@@ -34,9 +42,13 @@
 /* HED, DEK, BYLINE - feel free to play with this! */
 
 .article-top-content {
-  margin-top: 15vh;
+  padding-top: 3vh;
   text-align: center;
+  background-color: #517e98;
+  width: 100%;
+  margin-top: 50px;
 }
+
 .article-hed {
   /* replace "default" with "serif" if article uses a serif font in the hed */
   font-family: var(--hed-font-default);
@@ -44,14 +56,14 @@
   margin-bottom: 0;
 }
 .article-dek {
-  font-family: var(--hed-font-default);
+  font-family: var(--dek-font);
   margin-top: 0;
   font-size: 2em;
   margin-bottom: 0;
   font-weight: 500;
 }
 .article-byline {
-  font-family: var(--hed-font-default);
+  font-family: var(--dek-font);
   font-weight: 400;
   margin-top: 0.5em;
   font-size: 1.5em;
@@ -64,7 +76,47 @@
   color: #4e2a84;
 }
 
+.line-img {
+  position: relative;
+  text-align: center;
+  z-index: -1;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.cover-illo {
+  width: auto;
+}
+
+.cover-illo-img {
+  width: 50vw;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 3em;
+  padding-bottom: 0;
+}
+
+.pricetag-illo {
+  width: 80%;
+}
+
+.tag-line {
+  position: absolute;
+  top: 50%;
+  left: 52%;
+  transform: translate(-50%, -50%) rotate(0.013turn);
+  font-family: var(--hed-font-default);
+  font-weight: bold;
+}
+
 /* ARTICLE BODY - customize however you want! */
+
+body {
+  background-color: var(--celeb-blue);
+}
 
 .article-body {
   font-family: var(--body-font);
@@ -74,6 +126,41 @@
 }
 .article-body p {
   margin-bottom: 2em;
+}
+
+.quote-container {
+  background-color: white;
+  border-radius: 50px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  font-family: var(--hed-font-default);
+  font-weight: bold;
+}
+
+.pull-quote {
+  font-size: 1.75em;
+  display: block;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.personleft-illo {
+  width: 40%;
+  float: left;
+}
+
+.personright-illo {
+  width: 40%;
+  float: right;
+}
+
+.covid-illo {
+  z-index: -1;
 }
 
 /* CREDITS - shouldn't need to change anything! */

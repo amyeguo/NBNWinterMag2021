@@ -6,10 +6,15 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oxygen:ital,wght@0,600;0,700;1,600;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Faustina:ital,wght@0,600;0,700;1,600;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
-    <title>Article Title Here</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=PT+Sans:wght@400;700&family=Source+Serif+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <title>Highly decorated</title>
   </head>
   <body>
     <!-- Please don't touch anything in this nav tag! -->
@@ -39,53 +44,359 @@
       </a>
     </nav>
     <header class="article-top-content">
-      <h1 class="article-hed">Article Hed</h1>
-      <h2 class="article-dek">This is the article dek</h2>
+      <h1 class="article-hed">Highly decorated</h1>
+      <h2 class="article-dek">
+        Making quarantined housing a quarantined home.
+      </h2>
       <h3 class="article-byline">
-        WRITTEN BY
-        <a class="byline-link" href="#"><strong>AUTHOR NAME</strong></a>
+        WRITTEN BY <a class="byline-link" href="#"><strong>JIMMY HE</strong></a>
       </h3>
     </header>
     <article class="article-body">
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-        minima eius alias modi fugiat quibusdam tenetur reprehenderit ipsam
-        dolor ab esse quas rem facilis praesentium, nesciunt illum nam sunt
-        animi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-        quos officiis vero iure voluptatem obcaecati, a incidunt adipisci
-        pariatur atque dolorum tempore aspernatur, fugiat corrupti accusamus
-        quam nostrum harum sed.
+        From fairy lights to plastic ivy to pictures from home, dorms at
+        Northwestern University have their fair share of decorative staples. But
+        some students have moved beyond the ordinary collection of items by
+        buying (or making) unique conversation pieces to display. From an
+        in-dorm cinema fort to a poster of Kim Jong-un, these are the stories
+        behind seven Northwestern first-years’ unconventional dorm decorations.
       </p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-        minima eius alias modi fugiat quibusdam tenetur reprehenderit ipsam
-        dolor ab esse quas rem facilis praesentium, nesciunt illum nam sunt
-        animi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-        quos officiis vero iure voluptatem obcaecati, a incidunt adipisci
-        pariatur atque dolorum tempore aspernatur, fugiat corrupti accusamus
-        quam nostrum harum sed.
-      </p>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-        minima eius alias modi fugiat quibusdam tenetur reprehenderit ipsam
-        dolor ab esse quas rem facilis praesentium, nesciunt illum nam sunt
-        animi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-        quos officiis vero iure voluptatem obcaecati, a incidunt adipisci
-        pariatur atque dolorum tempore aspernatur, fugiat corrupti accusamus
-        quam nostrum harum sed.
-      </p>
+
+      <!--spotify poster-->
+      <div class="container light-pink" id="spotify_top">
+        <div class="top light-pink">
+          <h4>
+            Item: Spotify Poster <br />
+            Owner: Ben Lankfer, Weinberg first-year <br />
+            Dorm: 560 Lincoln St.
+          </h4>
+          <img class="window-image" src="img/spotify.jpg" />
+        </div>
+        <div class="content light-pink" id="spotify">
+          <p>
+            Stretching across the wall of Weinberg first-year Ben Lankfer’s 560
+            Lincoln St. dorm room is an eye-catching rainbow collage. The
+            collage is composed of 125 handpicked album covers from a vari- ety
+            of artists, and each image is paired with the Spotify scan code of a
+            corresponding song.
+            <br /><br />
+            After seeing other Spotify code projects on TikTok, Lankfer says he
+            was inspired to create a display using his own favorite songs. Pop
+            artists dominate the wall, with Miley Cyrus and Taylor Swift as
+            standouts.
+            <br /><br />
+            Lankfer says the poster is a particularly personal decoration.
+            <br /><br />
+            “It’s not just a bunch of album art,” Lankfer says. “It’s something
+            special to me and not something that everyone has.”
+          </p>
+          <button
+            type="button"
+            class="dark-pink spotify_less"
+            onclick="toggle_visibility('spotify'); toggle_visibility('spotify_more')"
+          >
+            read less
+          </button>
+        </div>
+        <div class="top light-pink" id="spotify_more">
+          <button
+            type="button"
+            class="dark-pink"
+            onclick="toggle_visibility('spotify'); hide('spotify_more')"
+          >
+            read more
+          </button>
+        </div>
+      </div>
+
+      <!--fort-->
+      <div class="container light-green" id="fort_top">
+        <div class="top light-green">
+          <h4>
+            Item: Dorm Cinema Fort <br />
+            Owner: Nozizwe Msipa, Communication first-year <br />
+            Dorm: Allison Hall <br />
+          </h4>
+          <img class="window-image" src="img/fort.jpg" />
+        </div>
+        <div class="content light-green" id="fort">
+          <p>
+            What do you get when you combine an empty dorm bed with extra
+            sheets? An in-dorm cinema fort, according to Communication
+            first-year Nozizwe Msipa.
+            <br /><br />
+            Msipa, who lives in an Allison Hall double-turned-single,
+            transformed her room’s unused bed into any child’s dream fort,
+            complete with fairy lights and an Adventure Time Lumpy Space
+            Princess plush.
+            <br /><br />
+            “I had two beds and lots of sheets, and I was just struck by
+            inspiration,” Msipa says. “There was nothing telling me no.”
+            <br /><br />
+            Since she uses the fort on most days to watch movies, Msipa says she
+            plans to keep the fort up for the rest of the quarter and will
+            continue to order more pillows and lights to beautify her personal
+            hideaway.
+          </p>
+          <button
+            type="button"
+            class="dark-green fort_less"
+            onclick="toggle_visibility('fort'); toggle_visibility('fort_more')"
+          >
+            read less
+          </button>
+        </div>
+        <div class="top light-green" id="fort_more">
+          <button
+            type="button"
+            class="dark-green"
+            onclick="toggle_visibility('fort'); hide('fort_more')"
+          >
+            read more
+          </button>
+        </div>
+      </div>
+
+      <!--bowling ball-->
+      <div class="container light-orange" id="ball_top">
+        <div class="top light-orange">
+          <h4>
+            Item: Bowling Ball<br />
+            Owner: Leah Ryzenman, SESP first-year<br />
+            Dorm: Ayers Hall
+          </h4>
+          <img class="window-image" src="img/bowling ball.jpg" />
+        </div>
+        <div class="content light-orange" id="ball">
+          <p>
+            Lined up against the back of SESP first-year Leah Ryzenman’s room in
+            Ayers Hall are two nightstands, a fridge and… a bowling ball?
+            Neither Ryzenman nor her roommate bowl, but on a trip to Goodwill,
+            Ryzenman’s roommate decided to add an uncommon decoration to their
+            dorm.
+            <br /><br />
+            The white, blue and black marbled ball always intrigues visitors.
+            <br /><br />
+            When people ask why she keeps it in her dorm, Ryzenman typically
+            responds with a simple reply: “Why not?”
+          </p>
+          <button
+            type="button"
+            class="dark-orange ball_less"
+            onclick="toggle_visibility('ball'); toggle_visibility('ball_more')"
+          >
+            read less
+          </button>
+        </div>
+        <div class="top light-orange" id="ball_more">
+          <button
+            type="button"
+            class="dark-orange"
+            onclick="toggle_visibility('ball'); hide('ball_more')"
+          >
+            read more
+          </button>
+        </div>
+      </div>
+
+      <!--kim jong un-->
+      <div class="container light-green" id="kim_top">
+        <div class="top light-green">
+          <h4>
+            Item: Kim Jong-Un Flag<br />
+            Owner: Hank Yang, Medill first-year<br />
+            Dorm: South Mid-Quads
+          </h4>
+          <img class="window-image" src="img/kim jong un.jpg" />
+        </div>
+        <div class="content light-green" id="kim">
+          <p>
+            Strolling past the front of South Mid-Quads at night, you might spot
+            a smiling face peeking through the window: the face of North Korean
+            dictator Kim Jong-un. Kim stands in front of an ocean, beside curvy
+            lettering that reads “Live, Laugh, Love.”
+            <br /><br />
+            This curious image is featured on a flag owned by Medill first-year
+            Hank Yang, who received it as a birthday gift in January. Yang says
+            his side of the room used to be pretty bare, but now the decorative
+            flag takes up plenty of wall space.
+            <br /><br />
+            Yang’s roommate, Weinberg first-year George Graham, has adjusted to
+            the flag.
+            <br /><br />
+            “Every morning I wake up and see Kim Jong-un’s wonderful smile,”
+            Graham says.
+          </p>
+          <button
+            type="button"
+            class="dark-green kim_less"
+            onclick="toggle_visibility('kim'); toggle_visibility('kim_more')"
+          >
+            read less
+          </button>
+        </div>
+        <div class="top light-green" id="kim_more">
+          <button
+            type="button"
+            class="dark-green"
+            onclick="toggle_visibility('kim'); hide('kim_more')"
+          >
+            read more
+          </button>
+        </div>
+      </div>
+
+      <!--timothee-->
+      <div class="container light-pink" id="timothee_top">
+        <div class="top light-pink">
+          <h4>
+            Item: Timothée Chalamet Jesus Candle<br />
+            Owner: Catherine Duncan, Medill first-year<br />
+            Dorm: Allison Hall
+          </h4>
+          <img class="window-image" src="img/candle.jpg" />
+        </div>
+        <div class="content light-pink" id="timothee">
+          <p>
+            A Sacred Heart of Jesus Candle? Nope. In place of Jesus’ head is the
+            chiseled face of actor Timothée Chalamet.
+            <br /><br />
+            For Medill first-year Catherine Duncan, what started as an inside
+            joke between her and a hometown friend about their mutual love of
+            Chalamet turned into a personal going-away gift that now sits in her
+            Allison dorm.
+            <br /><br />
+            “I was surprised that she found it,” Duncan says, “but I wasn’t
+            surprised that something like this was out there.”
+            <br /><br />
+            The candle serves as a funny yet meaningful reminder of their
+            friendship. After all, what’s better than having Timothée Chalamet
+            within arm’s reach?
+          </p>
+          <button
+            type="button"
+            class="dark-pink timothee_less"
+            onclick="toggle_visibility('timothee'); toggle_visibility('timothee_more')"
+          >
+            read less
+          </button>
+        </div>
+        <div class="top light-pink" id="timothee_more">
+          <button
+            type="button"
+            class="dark-pink"
+            onclick="toggle_visibility('timothee'); hide('timothee_more')"
+          >
+            read more
+          </button>
+        </div>
+      </div>
+
+      <!--golf club-->
+      <div class="container light-orange" id="club_top">
+        <div class="top light-orange">
+          <h4>
+            Item: Shoehorn Golf Club<br />
+            Owner: Savir Maskara, Weinberg first-year<br />
+            Dorm: North Mid-Quads
+          </h4>
+          <img class="window-image" src="img/golf club.jpg" />
+        </div>
+        <div class="content light-orange" id="club">
+          <p>
+            Shoehorn on one side, golf club on the other. For Weinberg
+            first-year Savir Maskara, it’s the perfect practical dorm
+            decoration.
+            <br /><br />
+            Before leaving for college, Maskara and his friends organized a
+            “Goodwill Secret Santa,” with each person buying a $5 gift from the
+            store. Maskara received a shoehorn golf club.
+            <br /><br />
+            While he admits the golf club head doesn’t serve a purpose in the
+            dorm room, Maskara uses the shoehorn to put his boots on.
+            <br /><br />
+            “I have a lot of boots and I’m not very used to putting them on,” he
+            says. “It’s easier to just use a shoehorn than to yank it up my
+            leg.”
+            <br /><br />
+            Maskara conveniently hangs his shoehorn golf club on a hook close to
+            his closet, so it often sparks inquiries from guests.
+          </p>
+          <button
+            type="button"
+            class="dark-orange club_less"
+            onclick="toggle_visibility('club'); toggle_visibility('club_more')"
+          >
+            read less
+          </button>
+        </div>
+        <div class="top light-orange" id="club_more">
+          <button
+            type="button"
+            class="dark-orange"
+            onclick="toggle_visibility('club'); hide('club_more')"
+          >
+            read more
+          </button>
+        </div>
+      </div>
+
+      <!--condom balloon-->
+      <div class="container dark-pink" id="condom_top">
+        <div class="top dark-pink">
+          <h4>
+            Item: Calvin the Blowup Condom<br />
+            Owner: Emily Lester, SESP first-year<br />
+            Dorm: 1838 Chicago
+          </h4>
+          <img class="window-image" src="img/condom balloon.jpg" />
+        </div>
+        <div class="content dark-pink" id="condom">
+          <p>
+            A product of a particularly stressful week of college combined with
+            an unused box of condoms, Calvin sits on the window ledge of SESP
+            first-year Emily Lester’s dorm room.
+            <br />
+            After her roommate, McCormick first-year Hannah Rabenhorst, found
+            the condoms in her drawer, the two blew them into balloons, danced
+            around with them and put a face on one, naming it Calvin.
+            <br />
+            Lester originally displayed Calvin in her room, but after realizing
+            he was in her Zoom back- ground, she relocated him out of frame.
+            <br />
+            Always sporting a smile, Calvin has a clear view of the Weber Arch
+            from his window abode, Lester says.
+          </p>
+          <button
+            type="button"
+            class="light-pink club_less"
+            onclick="toggle_visibility('condom'); toggle_visibility('condom_more')"
+          >
+            read less
+          </button>
+        </div>
+        <div class="top dark-pink" id="condom_more">
+          <button
+            type="button"
+            class="light-pink"
+            onclick="toggle_visibility('condom'); hide('condom_more')"
+          >
+            read more
+          </button>
+        </div>
+      </div>
     </article>
 
     <footer class="article-credits">
       <h3 class="credits-heading">Credits</h3>
       <h2 class="credits-subhed">Writing</h2>
-      <h3 class="credits-item">Writer Name</h3>
+      <h3 class="credits-item">Jimmy He</h3>
       <h2 class="credits-subhed">Editing</h2>
-      <h3 class="credits-item">Editor Name</h3>
+      <h3 class="credits-item">Eva Herscowitz</h3>
       <h2 class="credits-subhed">Print Design</h2>
-      <h3 class="credits-item">Designer Name</h3>
+      <h3 class="credits-item">Sooim Kang</h3>
       <h2 class="credits-subhed">Web Design & Development</h2>
-      <h3 class="credits-item">Your Name!</h3>
+      <h3 class="credits-item">Nathanial Ortiz</h3>
       <h2 class="credits-link">
         <a href="https://northbynorthwestern.com/magazine-current/"
           >Back to Magazine Homepage</a

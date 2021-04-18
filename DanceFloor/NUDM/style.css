@@ -15,9 +15,8 @@
   right: 0;
   top: 0;
   height: 7vh;
-  background-color: #342f2e;
+  background-color: #5d3234;
   padding: 1vh 0;
-  box-shadow: 1px 2px 1px;
 }
 .nbn-logo-nav {
   margin-left: 1vw;
@@ -37,16 +36,23 @@
   margin-top: 15vh;
   text-align: center;
 }
+em {
+  color: #5d3234;
+  font-style: normal;
+}
 .article-hed {
   /* replace "default" with "serif" if article uses a serif font in the hed */
   font-family: var(--hed-font-default);
   font-size: 4em;
   margin-bottom: 0;
+  color: #b06d70;
+  margin-top: 0;
+  margin-bottom: 30px;
 }
 .article-dek {
   font-family: var(--hed-font-default);
   margin-top: 0;
-  font-size: 2em;
+  font-size: 1.5em;
   margin-bottom: 0;
   font-weight: 500;
 }
@@ -74,6 +80,10 @@
 }
 .article-body p {
   margin-bottom: 2em;
+}
+img {
+  width: 40%;
+  margin: 0;
 }
 
 /* CREDITS - shouldn't need to change anything! */
@@ -123,5 +133,8 @@
   }
   .article-body {
     width: 90vw;
+  }
+  img {
+    width: 70%;
   }
 }

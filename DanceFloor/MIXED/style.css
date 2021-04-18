@@ -1,3 +1,5 @@
+body {
+}
 /* DEFAULT FONTS - feel free to add any other variables you need here */
 
 :root {
@@ -15,10 +17,16 @@
   right: 0;
   top: 0;
   height: 7vh;
-  background-color: #342f2e;
+  background: rgb(219, 91, 94);
+  background: linear-gradient(
+    90deg,
+    rgba(219, 91, 94, 1) 0%,
+    rgba(146, 89, 246, 1) 100%
+  );
+  border-bottom: 1px solid #3d197a;
   padding: 1vh 0;
-  box-shadow: 1px 2px 1px;
 }
+
 .nbn-logo-nav {
   margin-left: 1vw;
   height: 100%;
@@ -42,6 +50,8 @@
   font-family: var(--hed-font-default);
   font-size: 4em;
   margin-bottom: 0;
+  color: #db5b5e;
+  text-shadow: 2px 2px #4e2a84;
 }
 .article-dek {
   font-family: var(--hed-font-default);
@@ -75,7 +85,28 @@
 .article-body p {
   margin-bottom: 2em;
 }
-
+/*misc*/
+.quote {
+  width: 20%;
+  right: 5%;
+  position: absolute;
+  font-family: var(--hed-font-default);
+  font-size: 1.5em;
+  font-weight: 500;
+  color: #db5b5e;
+  background: -webkit-linear-gradient(#db5b5e, #9259f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  z-index: -1;
+  padding: 1%;
+  box-shadow: 6px 6px #3d197a;
+  border: 1.5px solid #3d197a;
+}
+.person {
+  color: #b06d70;
+  font-size: 0.7em;
+  text-align: right;
+}
 /* CREDITS - shouldn't need to change anything! */
 
 .article-credits {
@@ -123,5 +154,8 @@
   }
   .article-body {
     width: 90vw;
+  }
+  .quote {
+    display: none;
   }
 }

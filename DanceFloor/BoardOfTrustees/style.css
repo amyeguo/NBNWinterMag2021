@@ -2,9 +2,9 @@
 
 :root {
   /* Default font for headlines, headings, bylines, etc. */
-  --hed-font-default: "Poppins", sans-serif;
+  --hed-font-default: "Barlow", sans-serif;
   /* Font used for headlines if print design uses serif font */
-  --hed-font-serif: "Oxygen", sans-serif;
+  --hed-font-serif: "Faustina", serif;
   /* Default font for body text */
   --body-font: "PT Serif", serif;
 }
@@ -41,7 +41,10 @@
   /* replace "default" with "serif" if article uses a serif font in the hed */
   font-family: var(--hed-font-default);
   font-size: 4em;
+  font-weight: 800;
   margin-bottom: 0;
+  color: white;
+  margin-top: 0.3em;
 }
 .article-dek {
   font-family: var(--hed-font-default);
@@ -49,21 +52,47 @@
   font-size: 2em;
   margin-bottom: 0;
   font-weight: 500;
+  color: white;
 }
 .article-byline {
   font-family: var(--hed-font-default);
   font-weight: 400;
   margin-top: 0.5em;
   font-size: 1.5em;
+  color: white;
 }
 .byline-link {
-  color: black;
+  color: white;
   transition: color 1s ease;
 }
 .byline-link:hover {
   color: #4e2a84;
 }
-
+body {
+  background-color: #222323;
+}
+header mark {
+  color: #ffef13;
+  background-color: transparent;
+  font-style: italic;
+}
+article mark {
+  color: black;
+  background-color: transparent;
+  font-weight: 600;
+}
+header img {
+  width: 60vw;
+  margin-bottom: 0;
+}
+#beam {
+  background: rgb(255, 254, 233);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 254, 233, 1) 0%,
+    rgba(202, 199, 90, 1) 68%
+  );
+}
 /* ARTICLE BODY - customize however you want! */
 
 .article-body {
@@ -74,6 +103,28 @@
 }
 .article-body p {
   margin-bottom: 2em;
+  color: white;
+}
+.blink_me {
+  animation: blinker 4.5s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.pull-quote {
+  background-color: #e9e580;
+  border-radius: 8px;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  margin: 1em;
+  font-family: "Barlow", sans-serif;
+  font-size: 0.8em;
+  text-align: center;
 }
 
 /* CREDITS - shouldn't need to change anything! */
@@ -81,6 +132,7 @@
 .article-credits {
   text-align: center;
   font-family: var(--hed-font-default);
+  color: white;
 }
 .credits-heading {
   font-size: 2em;
@@ -99,7 +151,7 @@
   margin-top: 1.5em;
 }
 .credits-link a {
-  color: black;
+  color: white;
   transition: color 1s ease;
 }
 .credits-link a:hover {

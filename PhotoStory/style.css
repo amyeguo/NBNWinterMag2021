@@ -1,0 +1,179 @@
+/* DEFAULT FONTS - feel free to add any other variables you need here */
+
+:root {
+  /* Default font for headlines, headings, bylines, etc. */
+  --hed-font-default: "Barlow", sans-serif;
+  /* Font used for headlines if print design uses serif font */
+  --hed-font-serif: "Faustina", serif;
+  /* Default font for body text */
+  --body-font: "PT Serif", serif;
+}
+
+.mag-navbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 7vh;
+  background-color: #342f2e;
+  padding: 1vh 0;
+  box-shadow: 1px 2px 1px;
+}
+.nbn-logo-nav {
+  margin-left: 1vw;
+  height: 100%;
+}
+.nbn-path {
+  fill: white;
+  transition: fill 1s ease;
+}
+.homepage-link:hover .nbn-path {
+  fill: #b6acd1;
+}
+
+/* HED, DEK, BYLINE - feel free to play with this! */
+
+body {
+  margin: 0px;
+}
+
+.parallax {
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header {
+  background-image: url(LoveLetterToCampus.jpg);
+  height: 50vw;
+  background-size: 50vw;
+  background-position-y: 5em;
+}
+
+.part1 {
+  background-image: url(deering.jpg);
+  min-height: 100vh;
+}
+
+.part2 {
+  background-image: url(kellogg.jpg);
+  height: fit-content;
+  background-size: cover;
+}
+
+.part3 {
+  background-image: url(kresge.jpg);
+  height: fit-content;
+  background-size: cover;
+}
+
+.part4 {
+  background-image: url(lake.jpg);
+  height: fit-content;
+  background-size: cover;
+}
+
+.text {
+  position: relative;
+  padding: 10px;
+  width: 30%;
+  margin: auto;
+  margin-left: 4%;
+  font-size: 16px;
+  font-family: "PT Serif", serif;
+  opacity: 0.9;
+}
+.text p {
+  background-color: white;
+  padding: 1em;
+}
+
+.sections {
+  font-size: 1.5em;
+  font-weight: 1000;
+  padding: 0;
+}
+
+.article-credits {
+  text-align: center;
+  font-family: "Barlow", sans-serif;
+}
+.credits-heading {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+.credits-subhed {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.credits-item {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  font-weight: 400;
+}
+.credits-link {
+  margin-top: 1.5em;
+}
+.credits-link a {
+  color: black;
+  transition: color 1s ease;
+}
+.credits-link a:hover {
+  color: #4e2a84;
+}
+
+.article-byline {
+  font-family: "Barlow", sans-serif;
+  font-weight: 400;
+  font-size: 1.5em;
+  color: white;
+  z-index: 100;
+  position: relative;
+  text-align: center;
+}
+.byline-link {
+  color: white;
+  transition: color 1s ease;
+}
+.byline-link:hover {
+  color: #4e2a84;
+}
+
+.mag-navbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 7vh;
+  background-color: #342f2e;
+  padding: 1vh 0;
+  box-shadow: 1px 2px 1px;
+  z-index: 1;
+}
+.nbn-logo-nav {
+  margin-left: 1vw;
+  height: 100%;
+}
+.nbn-path {
+  fill: white;
+  transition: fill 1s ease;
+}
+.homepage-link:hover .nbn-path {
+  fill: #b6acd1;
+}
+
+@media screen and (max-width: 700px) {
+  .mag-navbar {
+    height: 5vh;
+  }
+  .article-byline {
+    font-size: 1em;
+    text-align: center;
+  }
+  .text {
+    width: 90vw;
+    font-size: 13px;
+  }
+}

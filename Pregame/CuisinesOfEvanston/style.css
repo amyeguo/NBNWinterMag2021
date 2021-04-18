@@ -2,9 +2,9 @@
 
 :root {
   /* Default font for headlines, headings, bylines, etc. */
-  --hed-font-default: "Poppins", sans-serif;
+  --hed-font-default: "Barlow", sans-serif;
   /* Font used for headlines if print design uses serif font */
-  --hed-font-serif: "Oxygen", sans-serif;
+  --hed-font-serif: "Faustina", serif;
   /* Default font for body text */
   --body-font: "PT Serif", serif;
 }
@@ -18,6 +18,7 @@
   background-color: #342f2e;
   padding: 1vh 0;
   box-shadow: 1px 2px 1px;
+  z-index: 10;
 }
 .nbn-logo-nav {
   margin-left: 1vw;
@@ -39,22 +40,23 @@
 }
 .article-hed {
   /* replace "default" with "serif" if article uses a serif font in the hed */
-  font-family: var(--hed-font-default);
-  font-size: 4em;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 3em;
   margin-bottom: 0;
 }
 .article-dek {
-  font-family: var(--hed-font-default);
+  font-family: "Opens Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1.6em;
   margin-top: 0;
-  font-size: 2em;
   margin-bottom: 0;
-  font-weight: 500;
 }
 .article-byline {
-  font-family: var(--hed-font-default);
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
+  font-size: 1.2em;
   margin-top: 0.5em;
-  font-size: 1.5em;
 }
 .byline-link {
   color: black;
@@ -64,16 +66,75 @@
   color: #4e2a84;
 }
 
+h4 {
+  font-family: "Opens Sans", sans-serif;
+  font-weight: 700;
+  font-size: 2.5em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+h5 {
+  font-family: "PT Sans Narrow", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+p {
+  font-family: "Source Serif Pro", serif;
+  font-weight: 400;
+  font-size: 1em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.pink {
+  color: #e67d6c;
+}
+.orange {
+  color: #d79815;
+}
+.green {
+  color: #8e8c1b;
+}
+
 /* ARTICLE BODY - customize however you want! */
 
 .article-body {
   font-family: var(--body-font);
-  width: 40vw;
+  width: 50vw;
   margin: auto;
   font-size: 1.2em;
 }
 .article-body p {
   margin-bottom: 2em;
+}
+
+.sidebar-image {
+  position: relative;
+  width: 25vw;
+  text-align: center;
+  font-family: var(--hed-font-default);
+  color: var(--text-gray);
+}
+.sidebar-left {
+  left: 0vw;
+  text-align: right;
+}
+.sidebar-right {
+  right: 0vw;
+  text-align: left;
+}
+.sidebar-image img {
+  width: 90%;
+  /* animation: sway 4s ease-in-out infinite alternate; */
+}
+.text-wrap-right {
+  float: right;
+  margin: auto;
+}
+.text-wrap-left {
+  float: left;
+  margin: auto;
 }
 
 /* CREDITS - shouldn't need to change anything! */
@@ -123,5 +184,10 @@
   }
   .article-body {
     width: 90vw;
+  }
+  .sidebar-image {
+    position: static;
+    font-size: 1em;
+    width: 100%;
   }
 }

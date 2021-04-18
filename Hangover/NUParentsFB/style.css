@@ -2,22 +2,26 @@
 
 :root {
   /* Default font for headlines, headings, bylines, etc. */
-  --hed-font-default: "Poppins", sans-serif;
+  --hed-font-default: "Barlow", sans-serif;
   /* Font used for headlines if print design uses serif font */
-  --hed-font-serif: "Oxygen", sans-serif;
+  --hed-font-serif: "Faustina", serif;
   /* Default font for body text */
   --body-font: "PT Serif", serif;
 }
-
+.article-body {
+  border: 3px;
+  border-style: solid;
+  border-color: #275f80;
+  padding: 1em;
+}
 .mag-navbar {
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   height: 7vh;
-  background-color: #342f2e;
+  background-color: #275f80;
   padding: 1vh 0;
-  box-shadow: 1px 2px 1px;
 }
 .nbn-logo-nav {
   margin-left: 1vw;
@@ -41,6 +45,7 @@
   /* replace "default" with "serif" if article uses a serif font in the hed */
   font-family: var(--hed-font-default);
   font-size: 4em;
+  color: #275f80;
   margin-bottom: 0;
 }
 .article-dek {
