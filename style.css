@@ -30,6 +30,65 @@ body {
 .homepage-link:hover .nbn-path {
   fill: #b6acd1;
 }
+
+/* for modal stylign */
+@keyframes modalFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.show-modal {
+  margin: auto;
+  display: block;
+  padding: 15px;
+}
+.close-modal {
+  position: absolute;
+  top: 0rem;
+  right: 3rem;
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  margin: 10px;
+  color: white;
+  background-color: #b02a2a;
+  border: none;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+
+.modal {
+  animation-name: modalFade;
+  animation-duration: 0.5s;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  background-color: white;
+  padding: 6rem;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid #2d5355;
+}
+.modal img {
+  width: 100%;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
 h1 {
   font-family: var(--hed-font-default);
   text-align: center;
@@ -54,11 +113,11 @@ body {
   background: #fffde8;
   border: 40px solid #b02a2a;
   font-family: var(--body-font-serif);
-  border-image: url(border.png) 120 round repeat;
+  word-wrap: break-word;
 }
 hr {
   border: 0;
-  border-top: 1px solid #9b7d44;
+  border-top: 3px solid #75bec2;
 }
 .sectionheading {
   color: #2d5355;
@@ -78,11 +137,13 @@ hr {
 .story {
   margin: 5%;
   text-align: center;
+  transition: text-shadow 0.5s ease;
   transition: color 0.5s ease;
 }
 .story:hover {
   cursor: pointer;
   color: #2d5355;
+  text-shadow: 1px 1px #75bec2;
 }
 .story-dek,
 .story-author {
@@ -95,9 +156,37 @@ hr {
 .story-author {
   font-weight: bold;
 }
+.flex-grid {
+  display: flex;
+}
+.flex-grid img {
+  width: 80%;
+  display: block;
+  margin: auto;
+  box-shadow: 0 5px 10px gray;
+  transition: transform 0.5s ease;
+}
+.flex-grid img:hover {
+  transform: scale(1.1);
+}
+.col {
+  flex: 1;
+}
 h3 {
   font-size: 2em;
 }
-svg {
-  z-index: -100;
+@media (max-width: 800px) {
+  .flex-grid {
+    flex-direction: column;
+  }
+  .flex-grid img {
+    width: 50%;
+    margin-bottom: 50px;
+  }
+  .modal img {
+    width: 100%;
+  }
+  .modal {
+    width: 100%;
+  }
 }
