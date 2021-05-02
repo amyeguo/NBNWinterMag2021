@@ -22,8 +22,44 @@ em {
   font-family: var(--hed-font-default);
   font-weight: bold;
 }
+
+.quote {
+  right: 3%;
+  position: absolute;
+  z-index: -1;
+  width: 20vw;
+  color: #6d97b0;
+  font-family: var(--hed-font-default);
+  font-size: 1.2em;
+  border: 4px solid #275f80;
+  padding: 1%;
+  box-shadow: 10px 10px #6d97b0;
+}
+.quote em {
+  font-weight: 800;
+  font-style: normal;
+  font-size: 1.3em;
+}
+.source {
+  float: right;
+  color: #6d97b0;
+  font-size: 0.9em;
+}
+.left {
+  left: 3%;
+}
 h2 {
   color: #275f80;
+  font-family: var(--hed-font-default);
+}
+.sidebarinfo {
+  width: 25%;
+  right: 1%;
+  position: absolute;
+  z-index: -1;
+}
+.sidebarinfosmall {
+  display: none;
 }
 .mag-navbar {
   position: fixed;
@@ -139,5 +175,16 @@ h2 {
   }
   .article-body {
     width: 90vw;
+  }
+  .quote {
+    display: none;
+  }
+  .sidebarinfo {
+    display: none;
+  }
+  .sidebarinfosmall {
+    display: block;
+    margin: auto;
+    width: 80%;
   }
 }
