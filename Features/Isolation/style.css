@@ -23,6 +23,13 @@ em {
   font-weight: bold;
 }
 
+.image {
+  width: 20%;
+  padding: 0;
+  position: absolute;
+  z-index: -1;
+}
+
 .quote {
   right: 3%;
   position: absolute;
@@ -47,6 +54,9 @@ em {
 }
 .left {
   left: 3%;
+}
+.right {
+  right: 3%;
 }
 h2 {
   color: #275f80;
@@ -186,5 +196,8 @@ h2 {
     display: block;
     margin: auto;
     width: 80%;
+  }
+  .image {
+    display: none;
   }
 }

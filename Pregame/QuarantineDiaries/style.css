@@ -30,6 +30,24 @@
 .homepage-link:hover .nbn-path {
   fill: #b6acd1;
 }
+em {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1.6em;
+}
+img {
+  width: 100%;
+}
+.email {
+  font-family: var(--hed-font-default);
+  font-size: 1.7em;
+  width: 50%;
+  display: block;
+  margin: auto;
+  margin-top: 170px;
+  padding: 1%;
+  border: 5px solid black;
+}
 
 /* HED, DEK, BYLINE - feel free to play with this! */
 

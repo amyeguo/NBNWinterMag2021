@@ -1,5 +1,7 @@
 /* DEFAULT FONTS - feel free to add any other variables you need here */
 
+/* pink color: D88271*/
+
 :root {
   /* Default font for headlines, headings, bylines, etc. */
   --hed-font-default: "Barlow", sans-serif;
@@ -8,9 +10,7 @@
   /* Default font for body text */
   --body-font: "PT Serif", serif;
 }
-body {
-  margin: 0;
-}
+
 .mag-navbar {
   position: fixed;
   left: 0;
@@ -38,14 +38,31 @@ body {
 .article-top-content {
   margin-top: 15vh;
   text-align: center;
+  color: #000000;
 }
+
+.article-top-content h1 {
+  text-shadow: 3px 3px #d88271;
+}
+
 .article-hed {
-  /* replace "default" with "serif" if article uses a serif font in the hed */
   font-family: var(--hed-font-default);
   font-size: 4em;
   margin-bottom: 0;
-  background-color: #ffdf02;
+  /*
+    background-color: #000000;
+    padding: 0.25em;
+    margin-left: 15vh;
+    margin-right: 15vh;
+    text-align: center;
+    */
+  transition: text-shadow 1s;
 }
+
+h1:hover {
+  text-shadow: 3px 3px #41d1d1;
+}
+
 .article-dek {
   font-family: var(--hed-font-default);
   margin-top: 0;
@@ -66,19 +83,90 @@ body {
 .byline-link:hover {
   color: #4e2a84;
 }
-#protest:hover {
-  cursor: pointer;
+
+.center {
+  text-align: center;
 }
+#protest {
+  cursor: grab;
+  width: 45vw;
+  transition: background-color 1s;
+  border: 10px solid #d88271;
+}
+#protest:hover {
+  background-color: #d8827186;
+}
+
 /* ARTICLE BODY - customize however you want! */
 
 .article-body {
   font-family: var(--body-font);
-  width: 40vw;
+  width: 45vw;
   margin: auto;
   font-size: 1.2em;
 }
 .article-body p {
   margin-bottom: 2em;
+}
+
+/* Sun animation */
+
+.sun {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  /*background-color: #FFDE00;*/
+  background-color: #fff6c1;
+  border-radius: 50%;
+  box-shadow: 0 0 0 60px #ffdd0050, 0 0 0 120px #ffde0040, 0 0 0 180px #ffde0020,
+    0 0 0 240px #ffde0010, 0 0 0 200px #ffde0000, 0 0 40px 100px #ffde0010;
+  animation: sunrise 2s infinite linear forwards, rays 2s 2s infinite linear;
+}
+@keyframes sunrise {
+  0% {
+    box-shadow: none;
+  }
+}
+@keyframes rays {
+  0% {
+    box-shadow: 0 0 0 0 #ffdd0050, 0 0 0 60px #ffdd0050, 0 0 0 120px #ffde0040,
+      0 0 0 180px #ffde0020, 0 0 0 240px #ffde0010, 0 0 40px 100px #ffde0010;
+  }
+  100% {
+    box-shadow: 0 0 0 60px #ffdd0050, 0 0 0 120px #ffde0040,
+      0 0 0 180px #ffde0020, 0 0 0 240px #ffde0010, 0 0 0 300px #ffde0000,
+      0 0 40px 100px #ffde0010;
+  }
+}
+
+/* Quote banner */
+.radical-change {
+  position: relative;
+  z-index: -1;
+}
+.radical-change h3 {
+  margin-bottom: 0;
+  font-family: var(--hed-font-serif);
+  color: var(--theme-red);
+  font-size: 2em;
+  font-weight: 100;
+}
+.radical-change h3::before {
+  content: url(quotemark.png);
+  margin-right: 0.25em;
+}
+.radical-change h3::after {
+  content: url(quotemark.png);
+  margin-left: 0.25em;
+}
+.radical-change h4 {
+  margin-top: 0.25em;
+  font-family: var(--hed-font-default);
+  font-weight: 500;
+  font-size: 1.25em;
+  color: var(--theme-yellow);
 }
 
 /* CREDITS - shouldn't need to change anything! */
